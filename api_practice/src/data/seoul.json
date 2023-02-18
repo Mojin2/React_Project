@@ -1,0 +1,20 @@
+{
+   "coord":{"lon":126.9778,"lat":37.5683},
+   "weather":[
+       {"id":721,"main":"Haze","description":"haze","icon":"50n"}
+    ],
+   "base":"stations",
+   "main":{
+        "temp":278.27,
+        "feels_like":276.6,
+        "temp_min":275.84,
+        "temp_max":279.93,
+        "pressure":1018,
+        "humidity":55},
+   "visibility":5000,
+   "wind":{"speed":2.06,"deg":300},
+   "clouds":{"all":75},
+   "dt":1676721547,
+   "sys":{"type":1,"id":8105,"country":"KR","sunrise":1676672345,"sunset":1676711602},
+   "timezone":32400,"id":1835848,"name":"Seoul","cod":200
+}

@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Api from './api/api';
 import Test from './api/test';
+import Weather from './api/weather';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Test />
+    <Weather />
   </React.StrictMode>
 );
 
