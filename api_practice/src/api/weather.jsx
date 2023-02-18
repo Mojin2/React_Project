@@ -17,10 +17,20 @@ const AppWrap = styled.div`
     }
 `;
 
+const ResultWrap = styled.div`
+    margin-top : 60px;
+    padding : 10px;
+    border : 1px black solid;
+    border-radius : 8px;
+`;
+
 function Weather(props){
-    const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
     const API_KEY ="0341698f7006d30bfc270c72aca51ef4"
     const {location , setLocation} = useState("");
+    const {result, setResult} = useState({});
+
+    const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
+
 
     const searchWeather = async(event) => {
         if(event.key === "Enter") {
@@ -30,6 +40,7 @@ function Weather(props){
                     url: url,
                 })
                 console.log(data);
+                setResult(data);
 
             }
             catch(err){
@@ -48,6 +59,17 @@ function Weather(props){
                     type="text"
                     onKeyDown={searchWeather}
                 />
+            {
+                Object.keys(result).length !==0 && (
+                    <ResultWrap>
+                        <div className="city">{result.data.name}</div>
+                        <div className="temperature">
+                            {Math.round(((result.data.main.temp - 273.15)*10))/10} °C
+                        </div>
+                        <div className="sky">{result.data.weather[0].main}</div>
+                    </ResultWrap>
+                )
+            }
             </div>
         </AppWrap>
     );
