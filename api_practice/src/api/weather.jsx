@@ -78,4 +78,4 @@ function Weather(props){
 export default Weather;
 
 
-// key : 0341698f7006d30bfc270c72aca51ef4
+// api key : 0341698f7006d30bfc270c72aca51ef4
