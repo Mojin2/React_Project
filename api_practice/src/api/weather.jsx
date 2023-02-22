@@ -24,11 +24,10 @@ const ResultWrap = styled.div`
     border-radius : 8px;
 `;
 
-function Weather(props){
-    const API_KEY ="0341698f7006d30bfc270c72aca51ef4"
-    const {location , setLocation} = useState("");
-    const {result, setResult} = useState({});
-
+function Weather(){
+    const API_KEY ="0341698f7006d30bfc270c72aca51ef4";
+    const [location , setLocation] = useState("");
+    const [result, setResult] = useState({});
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
 
 
