@@ -1,16 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Api from './api/api';
-import Test from './api/test';
-import Weather from './api/weather';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Api from "./api/api";
+import Test from "./api/test";
+import Weather from "./api/weather";
+import Movie from "./api/movielist";
+import MovieList from "./api/movielist";
+// import "./css/movie.css";
+import Login from "./hooks/login";
+// import "./css/login.css";
+import "./css/routing.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Weather />
+    <App />
   </React.StrictMode>
 );
 
