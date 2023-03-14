@@ -1,0 +1,84 @@
+.header {
+  height: 60px;
+  /* display: flex 요소를 가로로 정렬 */
+  display: flex;
+  align-items: center;
+  background-color: black;
+  /* 네이게이션 바는 항상 위에 위치 */
+  position: sticky;
+  top: 0;
+  /* z축 기준으로 겹쳐질때 우선순위 설정 */
+  z-index: 100;
+}
+
+.header_logo {
+  width: 100px;
+  /* 부모의 크기에 맞춰서 오브젝트의 크기에 맞게 설정 */
+  object-fit: contain;
+  /* margin 2개 속성 : 상하 좌우 */
+  margin: 0 20px;
+  margin-top: 10px;
+}
+
+.header_search {
+  display: flex;
+  /* 컨테이네가 차지하는 비율 */
+  flex: 1;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.header_searchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.header_searchIcon {
+  background-color: #cd9842;
+  padding: 5px;
+  height: 15px;
+}
+
+.header_option {
+  display: flex;
+  /* div,h1~h6,p는 block의 대표적인 태그
+     span,a,img는 inline의 대표적인 태그 */
+  /* inline속성 : 개행하지 않고 한 줄에 다른 요소들과 함께 있으려는 속성
+                 인라인 속성의 태그들은 너비/높이,마진 등 css속성이 작동X
+                 레이아웃 목적보다는 강조나 디자인 목적 */
+  /* block속성 : 하나의 태그가 그 자체로 한 줄을 차지
+                기본적으로 width값을 auto로 가짐 > 부모의 width */
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+.header_nav {
+  display: flex;
+  /* 컨테이너 내의 요소들을 배치하는 방법 */
+  justify-content: space-evenly;
+}
+
+.header_optionLineOne {
+  font-size: 10px;
+}
+
+.header_optionLineTwo {
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+.header_optionBasket {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header_optionLineTwoheader_basketCount {
+  margin-right: 10px;
+  margin-left: 10px;
+}
