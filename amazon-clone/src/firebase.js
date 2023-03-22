@@ -1,5 +1,7 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCaQHx7vf0LqYWEmxnnDpcfLIEAFwif-Wg",
 
@@ -15,3 +17,10 @@ const firebaseConfig = {
 
   measurementId: "G-19MGDJP8TH",
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore(); //데이터 베이스 구축
+const auth = firebase.auth();
+//const provider = new firebase.auth.GoogleAuthProvider();
+
+export { db, auth };

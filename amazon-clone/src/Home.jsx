@@ -13,15 +13,53 @@ export default function Home() {
           alt="background"
         />
 
-        <div className="home_row">
-          <Product />
+        <div className="home_raw">
+          <Product
+            id="1"
+            title="제품1"
+            price={3000}
+            image="/images/black_background.jpg"
+            rating={5}
+          />
+          <Product
+            id="2"
+            title="제품2"
+            price={5000}
+            image="/images/black_background.jpg"
+            rating={4}
+          />
         </div>
-        <div className="home_row">
-          <Product />
-          <Product />
+        <div className="home_raw">
+          <Product
+            id="3"
+            title="제품3"
+            price={4000}
+            image="/images/black_background.jpg"
+            rating={5}
+          />
+          <Product
+            id="4"
+            title="제품4"
+            price={13000}
+            image="/images/black_background.jpg"
+            rating={3}
+          />
+          <Product
+            id="5"
+            title="제품5"
+            price={9000}
+            image="/images/black_background.jpg"
+            rating={5}
+          />
         </div>
-        <div className="home_row">
-          <Product />
+        <div className="home_raw">
+          <Product
+            id="6"
+            title="제품6"
+            price={1500}
+            image="/images/black_background.jpg"
+            rating={2}
+          />
         </div>
       </div>
     </div>
