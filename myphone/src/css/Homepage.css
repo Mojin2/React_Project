@@ -1,0 +1,119 @@
+.main {
+  margin: 0;
+  background-color: skyblue;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  z-index: -1;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s;
+  transform-style: preserve-3d;
+}
+
+.outside_shape {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 414px;
+  height: 736px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+  border-radius: 50px;
+}
+
+.back {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 414px;
+  height: 736px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+  border-radius: 50px;
+}
+
+.inside_shape {
+  height: 580px;
+  background-color: white;
+  margin-top: 90px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.notch_bar {
+  width: 46.7%;
+  height: 70px;
+  /* background-color: skyblue; */
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.camera_container {
+  width: 40px;
+}
+
+.camera {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #6c6c6c9e;
+}
+
+.speaker_container {
+  width: 100px;
+  margin-right: 20px;
+}
+.speaker {
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #6c6c6c9e;
+}
+
+.bottom {
+  /* background-color: skyblue; */
+  width: 46.7%;
+  height: 56px;
+  position: absolute;
+  top: 665px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #6c6c6c9e;
+}
+
+.button_inside_container {
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.button_inside {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+}
