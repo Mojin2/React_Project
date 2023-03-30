@@ -14,12 +14,11 @@ export default function MyInfo() {
         <h2 className="title">
           <span>This is</span>
           <span>my info</span>
-          <span>page</span>
+          <span>Application</span>
         </h2>
 
         <div className="fade-in-box">
-          <span>이은빈</span>
-          <span>잠만보</span>
+          <span>인포</span>
         </div>
       </section>
     </div>

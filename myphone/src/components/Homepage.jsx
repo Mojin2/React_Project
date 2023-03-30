@@ -62,7 +62,7 @@ export default function Homepage() {
                   alt="miss"
                 />
 
-                <p className="test_app_1_text">test_app1</p>
+                <p className="test_app_1_text">MyInfo</p>
               </div>
             </Link>
           </div>

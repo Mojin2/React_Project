@@ -132,12 +132,6 @@ h2 {
   opacity: 0;
   animation-fill-mode: forwards;
   position: absolute;
-
-  font-size: 40px;
-  font-weight: 3000;
-  font-family: "godic", cursive;
-  justify-content: center;
-  align-items: center;
 }
 @keyframes fadein {
   from {
