@@ -32,7 +32,7 @@
 
 .inside_shape1 {
   height: 580px;
-  background-color: white;
+  background-color: black;
   margin-top: 90px;
   margin-left: 4%;
   margin-right: 4%;
@@ -46,14 +46,14 @@
 .status_bar {
   position: absolute;
   height: 20px;
-  /* background-color: white; */
+  background-color: black;
   top: 90px;
   width: 92%;
   left: 16.5px;
 }
-.app_container {
+.app_container1 {
   position: absolute;
-  /* background-color: yellow; */
+  background-color: white;
   height: 560px;
   width: 381px;
   top: 110px;

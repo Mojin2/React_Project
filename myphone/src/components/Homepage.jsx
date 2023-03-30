@@ -10,6 +10,7 @@ import {
   faSignal,
   faBatteryHalf,
 } from "@fortawesome/free-solid-svg-icons";
+import Battery from "./Battery";
 
 export default function Homepage() {
   const [nowTime, setNowTime] = useState(Date.now());
@@ -45,6 +46,7 @@ export default function Homepage() {
               <FontAwesomeIcon icon={faWifi} className="wifi" />
             </span>
             <span className="option">
+              {/* <Battery /> */}
               <FontAwesomeIcon icon={faBatteryHalf} className="battery" />
             </span>
           </div>

@@ -1,0 +1,176 @@
+@import "https://fonts.googleapis.com/css?family=Baloo+Paaji";
+
+.body1 {
+  height: 100%;
+}
+
+.body1 {
+  font-family: "Baloo Paaji", cursive;
+  background: #1e90ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  height: 300px;
+  position: relative;
+}
+
+.container > h1,
+h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.container > h1 > span {
+  width: 100%;
+  float: left;
+  color: #ffffff;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-name: titleAnimation;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+}
+.container > h2 > span {
+  width: 100%;
+  float: left;
+  color: #ffffff;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-name: titleAnimation;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+}
+.container > h1 > span {
+  animation-delay: 0.6s;
+  /* animation-fill-mode: forwards; */
+}
+.container > h1 > span :first-child {
+  animation-delay: 0.7s;
+}
+.container > h1 > span:last-child {
+  color: #ffe221;
+  animation-delay: 0.5s;
+}
+
+.container > h2 {
+  top: 0;
+  position: absolute;
+}
+.container > h1 {
+  top: 0;
+  position: absolute;
+}
+
+.container > h2 > span {
+  animation-delay: 4.1s;
+  /* animation-fill-mode: forwards; */
+}
+
+.container > h2 > span:first-child {
+  animation-delay: 4.2s;
+}
+.container > h2 > span:last-child {
+  color: #ffe221;
+  animation-delay: 4s;
+}
+
+.usechrome {
+  font-size: 10px;
+  color: #fff;
+  font-family: helvetica, arial;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+  }
+}
+
+.fade-in-box {
+  display: flex;
+  background: white;
+  top: -130px;
+  width: 100%;
+  height: 560px;
+  animation-name: fadein;
+  animation-duration: 1.5s;
+  animation-delay: 8s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  position: absolute;
+
+  font-size: 40px;
+  font-weight: 3000;
+  font-family: "godic", cursive;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

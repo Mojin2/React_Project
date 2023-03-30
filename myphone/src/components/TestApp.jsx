@@ -1,8 +1,24 @@
 import React from "react";
 import "../css/TestApp.css";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
+import { useInterval } from "use-interval";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWifi,
+  faSignal,
+  faBatteryHalf,
+} from "@fortawesome/free-solid-svg-icons";
+import Battery from "./Battery";
+import MyInfo from "./MyInfo";
 
 export default function TestApp() {
+  const [nowTime, setNowTime] = useState(Date.now());
+  useInterval(() => {
+    setNowTime(Date.now());
+  }, 1000);
+
   return (
     <div className="main">
       <div className="outside_shape">
@@ -17,10 +33,28 @@ export default function TestApp() {
         </div>
         <div className="inside_shape1"></div>
         {/* 내부 앱들 아이콘 넣는 부분 */}
-        <div className="status_bar"></div>
+        <div className="status_bar">
+          <span id="clock">
+            <Moment format={"HH:mm"} className={"moment-box"}>
+              {nowTime}
+            </Moment>
+          </span>
+          <div className="status_bar_right">
+            <span className="option">
+              <FontAwesomeIcon icon={faSignal} className="signal" />
+            </span>
+            <span className="option">
+              <FontAwesomeIcon icon={faWifi} className="wifi" />
+            </span>
+            <span className="option">
+              {/* <Battery /> */}
+              <FontAwesomeIcon icon={faBatteryHalf} className="battery" />
+            </span>
+          </div>
+        </div>
 
-        <div className="app_container">
-          <p>Test App 1</p>
+        <div className="app_container1">
+          <MyInfo />
         </div>
 
         <div className="bottom">
