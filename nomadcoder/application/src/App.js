@@ -1,41 +1,77 @@
 import Button from "./Button";
 import styles from "./App.module.css";
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
 function App() {
-  const [toDo, setToDo] = useState("");
-  const [toDos, setToDos] = useState([]);
-  function onChange(event) {
-    setToDo(event.target.value);
-  }
-  function onSubmit(event) {
-    event.preventDefault();
-    if (toDo === "") {
-      return;
-    }
-    setToDos((cur) => [...cur, toDo]);
-    setToDo("");
-  }
   return (
-    <div>
-      <h1>My To Dos ({toDos.length})</h1>
-      <form onSubmit={onSubmit}>
-        <input
-          value={toDo}
-          type={"text"}
-          placeholder={"Write your todo..."}
-          onChange={onChange}
-        ></input>
-        <button>Add To Do</button>
-      </form>
-      <hr />
-      <ul>
-        {toDos.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/movie/:id" element={<Detail />}></Route>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
+    </Router>
   );
 
+  //////////////////////coin tracker//////////////////////////
+  // const [loading, setLoading] = useState(true);
+  // const [coins, setCoins] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://api.coinpaprika.com/v1/tickers")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setCoins(json);
+  //       setLoading(false);
+  //     });
+  // }, []);
+  // return (
+  //   <div>
+  //     <h1>The Coins {coins.length !== 0 ? `(${coins.length})` : null}</h1>
+  //     {loading ? <strong>Loading...</strong> : null}
+  //     <ul>
+  //       {coins.map((coin) => (
+  //         <li key={coin.id}>
+  //           {coin.name}({coin.symbol}) : ${coin.quotes.USD.price}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   </div>
+  // );
+  //////////////////ToDO List//////////////////////
+  // const [toDo, setToDo] = useState("");
+  // const [toDos, setToDos] = useState([]);
+  // function onChange(event) {
+  //   setToDo(event.target.value);
+  // }
+  // function onSubmit(event) {
+  //   event.preventDefault();
+  //   if (toDo === "") {
+  //     return;
+  //   }
+  //   setToDos((cur) => [...cur, toDo]);
+  //   setToDo("");
+  // }
+  // return (
+  //   <div>
+  //     <h1>My To Dos ({toDos.length})</h1>
+  //     <form onSubmit={onSubmit}>
+  //       <input
+  //         value={toDo}
+  //         type={"text"}
+  //         placeholder={"Write your todo..."}
+  //         onChange={onChange}
+  //       ></input>
+  //       <button>Add To Do</button>
+  //     </form>
+  //     <hr />
+  //     <ul>
+  //       {toDos.map((item, idx) => (
+  //         <li key={idx}>{item}</li>
+  //       ))}
+  //     </ul>
+  //   </div>
+  // );
+  //////////////////////////////////////////////////////
   // const [counter, setCounter] = useState(0);
   // const [keyword, setKeyword] = useState("");
   // const [showing, setShowing] = useState(false);
