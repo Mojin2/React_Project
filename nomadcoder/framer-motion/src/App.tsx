@@ -1,10 +1,10 @@
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
 const Wrapper = styled(motion.div)`
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
@@ -15,20 +15,19 @@ const Wrapper = styled(motion.div)`
 `;
 const Box = styled(motion.div)`
   height: 200px;
-  background-color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 `;
 
 const Grid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: 50vw;
   gap: 10px;
-  div:first-child,
-  div:last-child {
-    grid-column: span 2;
-  }
 `;
 const Overlay = styled(motion.div)`
   width: 100%;
@@ -39,30 +38,70 @@ const Overlay = styled(motion.div)`
   justify-content: center;
   align-items: center;
 `;
+const overlay = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+const Circle = styled(motion.div)`
+  background-color: whitesmoke;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+`;
+const box = {
+  hover: (custom: number) => {
+    return {};
+  },
+};
 function App() {
+  const [id, setId] = useState<null | string>(null);
   const [clicked, setClicked] = useState(false);
-  const toggleClicked = () => {
-    setClicked((prev) => !prev);
-  };
+  const toggleClicked = () => setClicked((cur) => !cur);
   return (
-    <Wrapper onClick={toggleClicked}>
+    <Wrapper>
       <Grid>
-        <Box layoutId="select" />
-        <Box />
-        <Box />
-        <Box />
+        <Box
+          custom={1}
+          variants={box}
+          whileHover="hover"
+          onClick={() => setId("1")}
+          key={"1"}
+          layoutId={"1"}
+        />
+        <Box>{clicked ? <Circle layoutId="circle" /> : null}</Box>
+        <Box>{!clicked ? <Circle layoutId="circle" /> : null}</Box>
+        <Box
+          variants={box}
+          custom={4}
+          whileHover="hover"
+          onClick={() => setId("4")}
+          key={"4"}
+          layoutId={"4"}
+        />
       </Grid>
       <AnimatePresence>
-        {clicked ? (
+        {id ? (
           <Overlay
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            variants={overlay}
+            onClick={() => setId(null)}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <Box layoutId="select" style={{ width: 500, height: 200 }} />
+            <Box
+              layoutId={id}
+              style={{ background: "white", width: 400, height: 200 }}
+            />
           </Overlay>
         ) : null}
       </AnimatePresence>
+      <button
+        style={{ marginTop: "30px", padding: "10px 20px", fontSize: "18px" }}
+        onClick={toggleClicked}
+      >
+        Switch
+      </button>
     </Wrapper>
   );
 }
