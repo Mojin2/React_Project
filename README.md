@@ -1,4 +1,4 @@
-# React Project
+# React Project Links
 
 - **CoinTracker** : https://github.com/Mojin2/CoinTracker
 - **ToDoList** : https://github.com/Mojin2/ToDolist
